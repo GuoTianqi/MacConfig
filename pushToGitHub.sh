@@ -1,6 +1,10 @@
-cp -f ~/.emacs ./
-cp -f ~/.profile ./
-cp -f ~/zshre ./
+FILES="~/.emacs ~/.profile ~/.zshrc"
+
+for file in $FILES
+do
+    echo "file : $file"
+    cp -r $file ./
+done
 
 git add *
 git commit
