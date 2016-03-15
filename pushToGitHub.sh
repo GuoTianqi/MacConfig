@@ -1,3 +1,5 @@
+#! /usr/bin/env bash
+
 FILES="~/.emacs ~/.profile ~/.zshrc"
 
 for file in $FILES
