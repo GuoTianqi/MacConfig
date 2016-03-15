@@ -1,6 +1,8 @@
 #! /usr/bin/env bash
 
-FILES="~/.emacs ~/.profile ~/.zshrc"
+MY_HOME=~
+echo $MY_HOME
+FILES="$MY_HOME/.emacs $MY_HOME/.profile $MY_HOME/.zshrc"
 
 for file in $FILES
 do
