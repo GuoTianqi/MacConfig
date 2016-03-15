@@ -49,11 +49,11 @@ ZSH_THEME="robbyrussell_fix"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump)
+plugins=(git autojump brew brew-cask adb gradle vagrant go golang wd composer emacs man pod)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -84,15 +84,18 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # MyConfig
+export LC_ALL=zh_CN.UTF-8
+
 alias emacs=/usr/local/Cellar/emacs/24.4/bin/emacs
 alias emc="emacsclient -t -a \"\""
-export EDITOR=emc
+export EDITOR='emacs -nw'
 
 export ANDROID_HOME="/Applications/android-sdk"
 export ANDROID_NDK_HOME="/Applications/android-ndk"
+export ANDROID_SYSTRACE=$ANDROID_HOME/platform-tools/systrace
 export MAVEN_HOME=/Users/guotianqi/bin/apache-maven-3.2.2
 export PYTHON_HOME=/opt/local/Library/Frameworks/Python.framework/Versions/3.4
-export PATH=$PYTHON_HOME/bin:$MAVEN_HOME/bin:$ANDROID_NDK_HOME:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:~/bin:$PATH
+export PATH=$PYTHON_HOME/bin:$MAVEN_HOME/bin:$ANDROID_NDK_HOME:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_SYSTRACE:~/bin:$PATH
 
 # color
 # export CLICOLOR=1
@@ -124,10 +127,9 @@ export PATH=/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home/bin:
 export USE_CCACHE=1
 export CCACHE_DIR=/Volumes/DevZone/Android/.ccache
 
-# go
+### go
 export GOPATH=$HOME/Go
-export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOPATH/bin:/usr/local/opt/go/libexec/bin
 
-export PATH=$PATH:/Applications/go_appengine
-
-export PATH=/Volumes/DevZone/Android/git-repo:$PATH
+### PHP
+export PATH=~/.composer/vendor/bin:$PATH

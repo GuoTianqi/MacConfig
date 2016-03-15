@@ -2,14 +2,15 @@
 
 MY_HOME=~
 echo $MY_HOME
-FILES="$MY_HOME/.emacs $MY_HOME/.profile $MY_HOME/.zshrc"
+FILES=".emacs .profile .zshrc"
 
 for file in $FILES
 do
-    echo "file : $file"
-    cp -r $file ./
+    echo "file : $MY_HOME/$file"
+    cp -r $MY_HOME/$file ./
+    git add $file
 done
 
-git add *
+git add ./*
 git commit
 git push
